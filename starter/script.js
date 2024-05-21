@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//Improving Local Storage - Handling by appending users
 function processRegistration(event) {
   event.preventDefault();
-  //alert('registration simulation');
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
-  //console.log(username);
-
-  localStorage.setItem("RegisteredUsers", username + ":" + password + ";");
+  let registeredUsers = localStorage.getItem("RegisteredUsers") || "";
+  registeredUsers += username + ":" + password + ";";
+  localStorage.setItem("RegisteredUsers", registeredUsers);
 }
 
 function processLogin(event) {
