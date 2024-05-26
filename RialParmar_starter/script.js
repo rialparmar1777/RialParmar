@@ -15,6 +15,8 @@ function processRegistration(event) {
   let registeredUsers = localStorage.getItem("RegisteredUsers") || "";
   registeredUsers += username + ":" + password + ";";
   localStorage.setItem("RegisteredUsers", registeredUsers);
+  alert("You have successfully registered!")
+  document.getElementById("registrationForm").reset();
 }
 
 function processLogin(event) {
